@@ -1,4 +1,4 @@
-/* main colors */
+/* main colors */ /* обов'язково для всіх проектів */
 :root {
     --main-background-color: #FFFFFF;
     --body-font-color: #434455;
@@ -8,12 +8,52 @@
     --button-font-color: #4D5AE5;
     --accent-color: #404BBF;
     --second-backgound-color: #E5E5E5;
+    --portfolio-examples-gap: 20px;
+    --card-shadow: box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+html {
+    box-sizing: border-box; /* обов'язково для всіх проектів */
+}
+
+*, /* обов'язково для всіх проектів */
+*::before, 
+*::after {
+    box-sizing: inherit;
 }
 
 body {
     background-color: var(--main-background-color);
     font-family: 'Roboto', sans-serif;
     color: var(--body-font-color);
+    margin: 0; /* обов'язково для всіх проектів */
+}
+
+/* Допускається скидування марджинів так: 
+h1,h2,h3,h4,h5,h6,ul,p {
+    margin-top: 0;
+    margin-bottom: 0;
+}    */
+
+.container {
+    margin-left: auto; /* залишити, тоді контейнер буде по центру */
+    margin-right: auto; /* залишити, тоді контейнер буде по центру */
+    outline: 2px solid teal;
+    padding: 15px;
+    max-width: 1158px; /* залишити */
+}
+
+.container-nav { /* вирівнювання хедера */
+    margin-left: auto; /* залишити, тоді контейнер буде по центру */
+    margin-right: auto; /* залишити, тоді контейнер буде по центру */
+    width: 1158px;
+    outline: 2px solid teal;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: 24px; */
+
 }
 
 .nav-link {
@@ -24,6 +64,8 @@ body {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    margin-right: 40px;
+    margin-bottom: 24px;
 }
 
 .nav-link:hover,
@@ -38,20 +80,38 @@ body {
     line-height: 1.1;
     letter-spacing: 0.02em;
     text-transform: capitalize;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 72px;
 }
 
 .why-we {
     color: transparent;
 }
+.photo {
+    row-gap: 24px;
+}
 
 .nav ul {
     list-style: none;
     letter-spacing: 0.02em;
+    padding: 0; /* для списків, щоб не пробивали хедер */
+    margin: 0; /* для списків, щоб не пробивали хедер */
+    display: flex;   
 }
+
+.nav {  
+    display: flex;
+}
+
 
 .nav-contacts ul {
     list-style: none;
     letter-spacing: 0.02em;
+    padding: 0; /* для списків, щоб не пробивали хедер */
+    margin: 0; /* для списків, щоб не пробивали хедер */
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .logotype {
@@ -63,6 +123,7 @@ body {
     line-height: 1.3;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    margin-right: 76px;
 }
 
 .logo-part {
@@ -76,14 +137,17 @@ body {
     font-size: 16px;
     font-style: normal;
     line-height: 1.5;
+    margin: 40px;
 }
 
-.contacts:hover,
+.contacts:hover, 
 .contacts:focus {
     color: var(--accent-color);
 } 
 
 .hero-text {
+    margin-top: 0; 
+    margin-bottom: 48px; /* відстань між заголовком і текстом */
     color: var(--main-background-color);
     font-size: 56px;
     line-height: 1.07;
@@ -92,12 +156,15 @@ body {
 
 .hero-background {
     background-color: var(--second-font-color);
+    text-align: center; /*  кнопка і текст відцентрувались посередині контейнера  */
+    margin-top: 0;
+    padding-bottom: 120px;
 }
 
 .button-service {
     color: var(--main-background-color);
     background-color: var(--button-font-color);
-    padding: 16px 32px;
+    padding: 16px 33px;
     font-size: 16px;
     line-height: 1.5;
     font-weight: 500;
@@ -112,6 +179,8 @@ body {
 .button-service:hover,
 .button-service:focus {
     background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    color: var(--main-background-color);
 }
 
 .button {
@@ -126,6 +195,8 @@ body {
     border-radius: 4px;
     border: 1px solid var(--light-font-color);
     letter-spacing: 0.04em;
+    /* display: inline-block; */
+    /* min-width: 69px; */
 }
 
 .button:hover,
@@ -133,7 +204,14 @@ body {
     background-color: var(--accent-color);
     color: var(--main-background-color);
     border-radius: 4px;
+    border: 1px solid transparent;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    
 }
 
 
@@ -143,6 +221,24 @@ body {
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    margin-top: 0;
+    margin-bottom: 8px;
+
+}
+
+.offers {
+    display: flex;
+
+}
+
+.section-header ul {
+    display: flex;
+    row-gap: 24px;
+    margin-bottom: 120px;
+}
+
+.team ul {
+    display: flex;
 }
 
 .offers p {
@@ -151,6 +247,8 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     list-style: none;
+    margin-top: 0;
+    margin-bottom: 120px;
 }
 
 .offers li {
@@ -172,6 +270,9 @@ body {
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--second-font-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 72px;
 }
 
 .team {
@@ -225,16 +326,78 @@ body {
     color: var(--button-color);
 }
 
-.portfolio h1 {
+/* .portfolio h1 {
     color: transparent;
-}
+}  */
+
+
 .portfolio ul {
     list-style: none;
     font-family: 'Roboto', sans-serif;
+    padding: 0; /* для списків, щоб не пробивали хедер */
+    margin: 0; /* для списків, щоб не пробивали хедер */
 }
+
+
+/* сітка портфоліо */
+.portfolio-examples {
+    /* outline: 1px solid tomato;  */
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: calc(-1 * var(--portfolio-examples-gap));
+    margin-left: calc(-1 * var(--portfolio-examples-gap));
+}
+
+/* сітка портфоліо */
+.portfolio-examples > .item {
+    /* outline: 1px solid teal; */
+    flex-basis: calc(100% / 3 - 20px); 
+
+    margin-top: var(--portfolio-examples-gap);
+    margin-left: var(--portfolio-examples-gap);
+}
+
+/* сітка портфоліо */
+/* .card-thumb {
+    outline: 1px solid tomato; /* delete later */
+    /* margin-bottom: 32px; */
+
+/* } */ 
+
+/* сітка портфоліо
+.card-heading {
+    margin-bottom: 8px;
+
+} */
+
+/* .card-content {
+    margin-bottom: ;
+} */
+
+/* .item {
+    /* outline: 1px solid tomato; 
+
+} delete later */ */
+
+.card-text {
+    outline: 1px solid tomato;
+}
+
+.card {
+    border: 1px solid var(--light-font-color);
+    box-shadow: var(--card-shadow);
+}
+
+
 
 .portfolio-examples ul {
     list-style: none;
+    padding: 0; /* для списків, щоб не пробивали хедер */
+    margin: 0; /* для списків, щоб не пробивали хедер */
 }
 
 .portfolio-examples a {
@@ -253,22 +416,37 @@ body {
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--second-font-color);
+    margin-bottom: 8px;
+    /* outline: 1px solid tomato; delete later */
+    
+    /* padding-left: 16px;
+    padding-right: 54px;
+    padding-bottom: 32px;
+    padding-top: 32px; */
 }
 
 .portfolio-examples p {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    /* margin-bottom: 32px; */
+    /* outline: 1px solid tomato; delete later */
 }
 
 .portfolio-examples img {
     left: 0px;
     top: 0px;
+    margin-bottom: 48px;
+    width: 360px;
+    height: 300px;
+    margin-right: 24px;
+    /* outline: 1px solid tomato; delete later */
 }
 
 .footer {
     background-color: var(--second-font-color);
 }
+
 
 .logotype-footer {
     text-decoration: none;
@@ -279,9 +457,60 @@ body {
     line-height: 1.3;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    margin-bottom: 16px;
 }
 
 .part-color {
     color: var(--button-color);
     letter-spacing: 0.03em;
+    margin-bottom: 16px;
 }
+
+img {
+    display: flex;
+    max-width: 100%;
+}
+
+.team-members {
+    outline: 1px solid tomato;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+
+    margin-top: calc(-1 * var(--portfolio-examples-gap));
+    margin-left: calc(-1 * var(--portfolio-examples-gap));
+}
+
+.team-members > .member-item {
+
+}
+.team-thumb {
+    outline: 1px solid tomato;
+    display: flex;
+}
+
+
+.team-content {
+    outline: 1px solid tomato;
+    margin-top: var(--portfolio-examples-gap);
+    margin-left: var(--portfolio-examples-gap);
+    padding: 16px 32px;
+}
+
+.item > .img {
+    
+}
+
+/* .team-heading {
+   padding-left: 49px;
+   padding-right: 49px;
+   padding-top: 32px;
+   padding-bottom: 8px;
+}
+
+.team-text {
+    padding-left: 52px;
+    padding-right: 52px;
+    padding-bottom: 32px; 
+} */
