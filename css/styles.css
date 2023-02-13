@@ -29,6 +29,13 @@ body {
     margin: 0; /* обов'язково для всіх проектів */
 }
 
+h1, h2, h3, p, ul, li, a { /* загальне скидання стилів */
+    margin: auto;
+    padding: auto;
+}
+
+
+
 /* Допускається скидування марджинів так: 
 h1,h2,h3,h4,h5,h6,ul,p {
     margin-top: 0;
@@ -39,7 +46,7 @@ h1,h2,h3,h4,h5,h6,ul,p {
     margin-left: auto; /* залишити, тоді контейнер буде по центру */
     margin-right: auto; /* залишити, тоді контейнер буде по центру */
     outline: 2px solid teal;
-    padding: 15px;
+    padding: 0 15px;
     max-width: 1158px; /* залишити */
 }
 
@@ -52,8 +59,7 @@ h1,h2,h3,h4,h5,h6,ul,p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin-bottom: 24px; */
-
+    margin-bottom: 24px; 
 }
 
 .nav-link {
@@ -64,8 +70,9 @@ h1,h2,h3,h4,h5,h6,ul,p {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    row-gap: 40px;
     margin-right: 40px;
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
 }
 
 .nav-link:hover,
@@ -82,15 +89,22 @@ h1,h2,h3,h4,h5,h6,ul,p {
     text-transform: capitalize;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 72px;
+    padding-bottom: 72px;
 }
 
-.why-we {
-    color: transparent;
+.cover-head {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
-.photo {
-    row-gap: 24px;
-}
+
 
 .nav ul {
     list-style: none;
@@ -152,13 +166,29 @@ h1,h2,h3,h4,h5,h6,ul,p {
     font-size: 56px;
     line-height: 1.07;
     letter-spacing: 0.02em;
+    padding-top: 188px;
 }
+
+.hyphenation {
+    margin-top: 0;
+    margin-bottom: 48px;
+    color: var(--main-background-color);
+    font-size: 56px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    margin-bottom: 48px;
+}
+
+.photo {
+    padding-bottom: 120px;
+}
+
 
 .hero-background {
     background-color: var(--second-font-color);
     text-align: center; /*  кнопка і текст відцентрувались посередині контейнера  */
     margin-top: 0;
-    padding-bottom: 120px;
 }
 
 .button-service {
@@ -174,6 +204,8 @@ h1,h2,h3,h4,h5,h6,ul,p {
     border: 1px solid var(--button-font-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     letter-spacing: 0.04em;
+    margin-bottom: 188px;
+    
 }
 
 .button-service:hover,
@@ -215,6 +247,16 @@ h1,h2,h3,h4,h5,h6,ul,p {
 }
 
 
+.offers {
+    margin: 0;
+    width: 1128px;
+    height: 104;
+    padding-bottom: 120px;
+    padding-right: 156px;
+    padding-left: 156px;
+    padding-top: 120px;
+}
+
 .offers h3 {
     color: var(--second-font-color);
     font-size: 20px;
@@ -228,17 +270,14 @@ h1,h2,h3,h4,h5,h6,ul,p {
 
 .offers {
     display: flex;
-
 }
+
 
 .section-header ul {
+    display: block;
     display: flex;
-    row-gap: 24px;
-    margin-bottom: 120px;
-}
-
-.team ul {
-    display: flex;
+    padding-bottom: 120px;
+   
 }
 
 .offers p {
@@ -248,7 +287,7 @@ h1,h2,h3,h4,h5,h6,ul,p {
     letter-spacing: 0.02em;
     list-style: none;
     margin-top: 0;
-    margin-bottom: 120px;
+    padding-bottom: 120px;
 }
 
 .offers li {
@@ -272,11 +311,13 @@ h1,h2,h3,h4,h5,h6,ul,p {
     color: var(--second-font-color);
     text-align: center;
     margin-top: 0;
-    margin-bottom: 72px;
+    padding-bottom: 72px;
+    padding-top: 120px;
 }
 
 .team {
     background-color: var(--button-color);
+    height: 732px;
 }
 .team h3 {
     font-weight: 500;
@@ -303,6 +344,8 @@ h1,h2,h3,h4,h5,h6,ul,p {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--light-font-color);
+    padding-top: 138px;
+    padding-bottom: 100px;
 }
 
 .footer a {
@@ -326,9 +369,19 @@ h1,h2,h3,h4,h5,h6,ul,p {
     color: var(--button-color);
 }
 
-/* .portfolio h1 {
+.portfolio h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
     color: transparent;
-}  */
+} 
 
 
 .portfolio ul {
@@ -360,28 +413,6 @@ h1,h2,h3,h4,h5,h6,ul,p {
     margin-top: var(--portfolio-examples-gap);
     margin-left: var(--portfolio-examples-gap);
 }
-
-/* сітка портфоліо */
-/* .card-thumb {
-    outline: 1px solid tomato; /* delete later */
-    /* margin-bottom: 32px; */
-
-/* } */ 
-
-/* сітка портфоліо
-.card-heading {
-    margin-bottom: 8px;
-
-} */
-
-/* .card-content {
-    margin-bottom: ;
-} */
-
-/* .item {
-    /* outline: 1px solid tomato; 
-
-} delete later */ */
 
 .card-text {
     outline: 1px solid tomato;
@@ -419,10 +450,6 @@ h1,h2,h3,h4,h5,h6,ul,p {
     margin-bottom: 8px;
     /* outline: 1px solid tomato; delete later */
     
-    /* padding-left: 16px;
-    padding-right: 54px;
-    padding-bottom: 32px;
-    padding-top: 32px; */
 }
 
 .portfolio-examples p {
@@ -447,7 +474,6 @@ h1,h2,h3,h4,h5,h6,ul,p {
     background-color: var(--second-font-color);
 }
 
-
 .logotype-footer {
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
@@ -457,13 +483,11 @@ h1,h2,h3,h4,h5,h6,ul,p {
     line-height: 1.3;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    margin-bottom: 16px;
 }
 
 .part-color {
     color: var(--button-color);
     letter-spacing: 0.03em;
-    margin-bottom: 16px;
 }
 
 img {
@@ -472,41 +496,45 @@ img {
 }
 
 .team-members {
-    outline: 1px solid tomato;
-    padding: 0;
-    margin: 0;
+    /* outline: 1px solid tomato; */
+    padding: 0px;
+    margin: 0px;
 
     display: flex;
+    justify-content: center;
 
-    margin-top: calc(-1 * var(--portfolio-examples-gap));
-    margin-left: calc(-1 * var(--portfolio-examples-gap));
-}
-
-.team-members > .member-item {
-
-}
-.team-thumb {
-    outline: 1px solid tomato;
-    display: flex;
+    padding-bottom: 120px;
 }
 
 
 .team-content {
-    outline: 1px solid tomato;
-    margin-top: var(--portfolio-examples-gap);
-    margin-left: var(--portfolio-examples-gap);
-    padding: 16px 32px;
+    /* outline: 1px solid tomato; */
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    text-align: center;
+
 }
 
-/* .team-heading {
-   padding-left: 49px;
-   padding-right: 49px;
-   padding-top: 32px;
-   padding-bottom: 8px;
+.team-heading {
+    padding-bottom: 8px;
 }
 
 .team-text {
     padding-left: 52px;
     padding-right: 52px;
     padding-bottom: 32px; 
-} */
+}
+
+.text-footer {
+    padding-top: 138px;
+    padding-bottom: 100px;
+}
+
+.footer-hyphen {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--light-font-color);
+}
+
