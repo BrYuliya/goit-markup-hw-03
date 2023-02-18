@@ -269,7 +269,6 @@ h1,h2,h3,h4,h5,h6,ul,p {
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    display: flex;
     margin: 0;
     padding: 0;
     margin-bottom: 8px;
@@ -428,7 +427,13 @@ h1,h2,h3,h4,h5,h6,ul,p {
     width: calc((100% - 3 * 24px) / 3);
     /* margin-top: var(--portfolio-examples-gap);
     margin-left: var(--portfolio-examples-gap); */
-    margin-right: 24px;
+}
+
+.portfolio-examples > .item:not(:nth-child(3n)) {
+    margin-right: 24px;;
+}
+
+.portfolio-examples>.item:not(:nth-last-child(-n+3)) {
     margin-bottom: var(--portfolio-examples-gap);
 }
 
@@ -452,10 +457,6 @@ h1,h2,h3,h4,h5,h6,ul,p {
     color: var(--second-font-color);
 }
 
-.portfolio-examples a:hover,
-.portfolio-examples a:focus {
-    color: var(--accent-color);
-}
 
 .portfolio-examples h2 {
     font-weight: 500;
@@ -571,13 +572,6 @@ img {
 
 .offers .offers-li:not(:last-child) {
     margin-right: 24px;
-}
-
-.offer-head {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 8px;
 }
 
 .nav-contacts > .contacts:not(:first-child)  {
